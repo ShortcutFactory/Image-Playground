@@ -1,0 +1,130 @@
+.circle {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: blue;
+  border-radius: 50%;
+  margin: 40px;
+  transition: all 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow:visible;
+}
+
+
+
+
+
+
+.circles {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; /* Align circles in a row */
+  justify-content: center; /* Center the circles horizontally */
+  bottom: 280px; /* Add more space above and below the circles */
+  background-color: blue;
+  width: 100%;
+  overflow:visible;
+}
+.text-circle {
+  overflow:hidden;
+
+  align-items: center;  /* Center text vertically */
+  justify-content: center;  /* Center text horizontally */
+  flex-direction: column;  /* Allow text to wrap within the container */
+  position: absolute;
+  margin: 60px;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  padding: 10px;  /* Add padding to ensure space around the text */
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+  opacity: 0.0;
+  font-weight: bold;
+  transition: all 1s ease;
+  text-align: center;
+  max-width: 150px;
+  max-height: 150px;  /* Limits the maximum height */
+  white-space: normal;  /* Allow line wrapping */
+}
+.text-content{
+    word-wrap: break-word;
+  color: black;
+  opacity:1.0;
+  transition: all 0.5s;
+}
+
+.keyword {
+    position: absolute;
+    bottom: -30px; /* Position below the circle */
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+  font-family:Arial;
+  overflow:visible;
+  transition: all 0.5s;
+}
+/* Define the positions for original circles */
+@media (max-width: 768px) {
+  #circle6 {
+    display: none; /* Hide the sixth circle on smaller screens */
+  }
+
+  /* Adjust positioning of remaining circles for better layout */
+  #circle1 {
+    transform: translateX(-60px);
+  }
+  #circle2 {
+    transform: translateX(-180px);
+  }
+  #circle3 {
+    transform: translateX(-300px);
+  }
+  #circle4 {
+    transform: translateX(60px);
+  }
+  #circle5 {
+    transform: translateX(180px);
+  }
+
+  /* Optional: Adjust .circles container */
+  .circles {
+    bottom: 200px; /* Reduce space above */
+    flex-wrap: wrap; /* Allow wrapping if space is constrained */
+  }
+}
+
+/* Duplicate circles that appear underneath the original ones */
+.circle.duplicate {
+    z-index: 0;  /* Ensure duplicate circles are behind the original ones */
+    pointer-events: none;  /* Make sure duplicates don't block clicks */
+}
+
+/* Ensure that original circles are above duplicates and clickable */
+#circle1, #circle2, #circle3, #circle4, #circle5, #circle6 {
+    z-index: 2; /* Ensure they are above duplicates */
+    pointer-events: auto; /* Make them clickable */
+}
+
+/* AI image and input styling */
+
+
+.blob-describe {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    margin-top: 20px; /* Space from the top of the page */
+}
+
+
+
+
+/* Adding wiggle animation when the circle is clicked and moves to a new position */
+.circle.wiggling {
+    animation: wiggle 1s infinite; /* Make the wiggle happen infinitely */
+}
