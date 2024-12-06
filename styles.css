@@ -28,6 +28,10 @@ body {
  transform: translate(-50%); */
 }
 
+.version{
+color:white;
+}
+
 .blob {
   position: absolute;
   width: 200px;
