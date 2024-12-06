@@ -33,6 +33,7 @@ body {
 .version{
 color:white;
     font-size:20px;
+  width:200px;
 }
 
 .blob {
