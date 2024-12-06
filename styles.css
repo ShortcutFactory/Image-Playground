@@ -16,7 +16,7 @@ body {
 
 #api-call-display {
   color: white;
-  font-size:20px;
+
   
 }
 
@@ -32,6 +32,7 @@ body {
 
 .version{
 color:white;
+    font-size:20px;
 }
 
 .blob {
